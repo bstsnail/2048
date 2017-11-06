@@ -5,6 +5,7 @@ envs:
   
 stages:
   build:
+    - rm -rf bin/
     # 下一条指令开启xcode工程的默认编译
     # 一般需要指定以下参数:
     # --iosPath 输出路径， 默认是 bin/ios
