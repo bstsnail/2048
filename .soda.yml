@@ -55,5 +55,5 @@ stages:
     #     --secretKey
     #        COS API secret key
     
-    - plugin_cos --appid "#{cos.appid}" --bucketName soda --bucketPath / --file bin/ios/*.ipa --region ap_guangzhou --secretId "#{cos.secretId}" --secretKey "#{cos.secretKey}"
+    - plugin_cos --appid "#{cos.appid}" --bucketName soda --bucketPath / --files bin/ios/*.ipa --region ap_guangzhou --secretId "#{cos.secretId}" --secretKey "#{cos.secretKey}"
       
