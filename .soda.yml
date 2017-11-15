@@ -34,3 +34,26 @@ stages:
     # --type 上传包的类型（android或者ios)
     # --version 包的版本
     - plugin_fir --build "#{build}" --bundleId com.soda.m2048 --file bin/ios/output.ipa  --name 2048 --token "#{fir.token}" --type ios --version "#{version}"
+    # 用于上传构建产物到腾讯云对象存储系统 
+    
+    # Usage: <main class> [options]
+    #   Options:
+    #     --appid
+    #        COS APPID
+    #     --bucketName
+    #        The bucket name in COS
+    #     --bucketPath
+    #        存储文件到bucket中的folder
+    #     --files
+    #        需要上传的文件，支持正则匹配，例如 /bin/*.apk
+    #     -r, --region
+    #        COS 区域，默认是广州
+    #        Default: ap_guangzhou
+    #        Possible Values: [ap_beijing_1, ap_beijing, ap_shanghai, ap_guangzhou, ap_chengdu, ap_singapore, ap_hongkong, na_toronto, eu_frankfurt]
+    #     --secretId
+    #        COS API secret id
+    #     --secretKey
+    #        COS API secret key
+    
+    - plugin_cos --appid "#{cos.appid}" --bucketName soda --bucketPath / --file bin/ios/*.ipa --region ap_guangzhou --secretId "#{cos.secretId}" --secretKey "#{cos.secretKey}"
+      
